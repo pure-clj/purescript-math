@@ -54,7 +54,10 @@
     (rem n m)))
 
 (defn round [^double n]
-  (double (Math/round n)))
+  (cond
+    (Double/isNaN n) Double/NaN
+    (Double/isInfinite n) n
+    :else (double (Math/round n))))
 
 (defn sin [^double n]
   (Math/sin n))
