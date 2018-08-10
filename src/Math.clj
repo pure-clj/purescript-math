@@ -18,7 +18,7 @@
     (Math/atan2 y x)))
 
 (defn ceil [^double n]
-  (long (Math/ceil n)))
+  (Math/ceil n))
 
 (defn cos [^double n]
   (Math/cos n))
