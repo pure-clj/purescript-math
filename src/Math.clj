@@ -27,12 +27,12 @@
   (Math/exp n))
 
 (defn floor [^double n]
-  (long (Math/floor n)))
+  (Math/floor n))
 
 (defn trunc [^double n]
-  (long (if (neg? n)
-          (Math/ceil n)
-          (Math/floor n))))
+  (if (neg? n)
+    (Math/ceil n)
+    (Math/floor n)))
 
 (defn log [^double n]
   (Math/log n))
@@ -54,7 +54,7 @@
     (rem n m)))
 
 (defn round [^double n]
-  (Math/round n))
+  (double (Math/round n)))
 
 (defn sin [^double n]
   (Math/sin n))
@@ -77,7 +77,7 @@
 
 (def pi Math/PI)
 
-(def tau (* 2 pi))
+(def tau (* 2 Math/PI))
 
 (def sqrt1_2 0.7071067811865476)
 
