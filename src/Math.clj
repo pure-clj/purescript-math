@@ -18,7 +18,7 @@
     (Math/atan2 y x)))
 
 (defn ceil [^double n]
-  (Math/ceil n))
+  (long (Math/ceil n)))
 
 (defn cos [^double n]
   (Math/cos n))
@@ -27,12 +27,12 @@
   (Math/exp n))
 
 (defn floor [^double n]
-  (Math/floor n))
+  (long (Math/floor n)))
 
 (defn trunc [^double n]
-  (if (neg? n)
-    (Math/ceil n)
-    (Math/floor n)))
+  (long (if (neg? n)
+          (Math/ceil n)
+          (Math/floor n))))
 
 (defn log [^double n]
   (Math/log n))
